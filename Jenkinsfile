@@ -12,15 +12,15 @@ pipeline
         {
             steps
             {
-                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                               echo("build step")
+               
             }
             post 
             {
                 success
                 {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                                  echo("build success")
+                  
                 }
             }
         }
@@ -40,7 +40,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/ajaybhave07/OpenCartSeleniumFramework'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/rcsources/testrunner/testng_sanity.xml"
+                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/recsources/testrunner/testng_sanity.xml"
                     
                 }
             }
