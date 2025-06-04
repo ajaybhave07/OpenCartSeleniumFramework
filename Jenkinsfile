@@ -40,7 +40,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/ajaybhave07/OpenCartSeleniumFramework'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/recsources/testrunner/testng_sanity.xml"
+                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/recources/testrunner/testng_sanity.xml"
                     
                 }
             }
