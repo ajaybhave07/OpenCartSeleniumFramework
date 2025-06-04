@@ -77,7 +77,7 @@ public class DriverFactory {
 			String environmentName = System.getProperty("env");
 			System.out.println("environment name " + environmentName);
 
-			if (environmentName == null) { // if no environment is passed from maven , we use QA environment
+			if (environmentName == null)  { // if no environment is passed from maven , we use QA environment
 				System.out.println("Env is null hence we run tests on QA environment");
 				fis = new FileInputStream(".\\src\\test\\recources\\config\\config_qa_env.properties");
 			} else {
